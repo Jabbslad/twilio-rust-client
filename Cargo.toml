@@ -1,0 +1,11 @@
+[package]
+name = "twilio-rust-example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dotenv = "0.15.0"
+openapi = { version = "1.39.2", path = "../twilio-rust" }
+tokio = { version = "1.26.0", features = ["rt", "rt-multi-thread", "macros"] }
