@@ -9,8 +9,6 @@ async fn main() {
     let account_sid = env::var("TWILIO_ACCOUNT_SID").expect("unable to retrieve account sid");
     let auth_token = env::var("TWILIO_AUTH_TOKEN").expect("unable to retrieve auth token");
 
-    println!("account_sid='{account_sid}'\nauth_token='{auth_token}'");
-
     let mut twilio_config = twilio::configuration::Configuration::new();
     twilio_config.basic_auth = Some((account_sid.clone(), Some(auth_token)));
 
