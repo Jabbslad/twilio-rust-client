@@ -118,9 +118,14 @@ async fn main() {
     let mut twilio_config = twilio::configuration::Configuration::new();
     twilio_config.basic_auth = Some((account_sid.clone(), Some(auth_token)));
 
+
+    let params = &ListAvailablePhoneNumberMobileParams {
+        page_size: Some(1),
+        ..Default::default()
+    };
     let res = list_available_phone_number_mobile(
         &twilio_config,
-        &ListAvailablePhoneNumberMobileParams::new(),
+        params,
     )
     .await;
     res.iter().for_each(|s| println!("{s}"));
